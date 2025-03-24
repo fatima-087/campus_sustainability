@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top:3%;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            width: 250px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .card p {
+            font-size: 14px;
+            color: #777;
+        }
+        .analysis-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        .analysis-button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="{{ url_for('add_record') }}">Add New Record</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('signup') }}">Signup</a>
+        <a href="{{ url_for('display_headers') }}">Json Data Headers</a>
+        <a href="{{ url_for('logout') }}">Exit</a>
+    </div>
+
+    <div class="container">
+        <h1>Campus Sustainability</h1>
+        <p>Welcome to our Sustainability Data Dashboard! We provide powerful insights into environmental data, allowing users to track energy usage, carbon emissions, recycling trends, and more. Our platform offers interactive visualizations and easy-to-understand reports to help make data-driven decisions for a greener future.</p>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>JSON Headers</h3>
+                <p>Quickly view structured data in JSON format to analyze the available sustainability metrics.</p>
+            </div>
+            <div class="card">
+                <h3>Graphs</h3>
+                <p>Explore various interactive graphs that visualize key sustainability trends over time.</p>
+            </div>
+            <div class="card">
+                <h3>Add Records</h3>
+                <p>Easily contribute new sustainability data by adding records through our simple form.</p>
+            </div>
+        </div>
+
+        <!-- Analysis Button -->
+        <a href="{{ url_for('analysis') }}" class="analysis-button">Generate Analysis Stats</a>
+    </div>
+
+</body>
+</html>

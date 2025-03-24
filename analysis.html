@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Sustainability Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="{{ url_for('add_record') }}">Add New Record</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('signup') }}">Signup</a>
+        <a href="{{ url_for('display_headers') }}">Json Data Headers</a>
+        <a href="{{ url_for('logout') }}">Exit</a>
+    </div>
+
+    <!-- Dashboard Title -->
+    <h1>🌍 Campus Sustainability Dashboard</h1>
+
+    <!-- Statistics Section -->
+    <div class="stats-container">
+        <p><strong>Total Energy Used:</strong> {{ stats.total_energy_used }} kWh</p>
+        <p><strong>Avg Renewable Energy:</strong> {{ stats.avg_renewable_energy }}%</p>
+        <p><strong>Total Waste Generated:</strong> {{ stats.total_waste_generated }} kg</p>
+        <p><strong>Avg Recycling:</strong> {{ stats.avg_recycling }}%</p>
+        <p><strong>Total CO2 Emissions:</strong> {{ stats.total_co2_emissions }} kg</p>
+    </div>
+ <br>
+    <!-- Graphs with Loading Effect -->
+    <div class="chart-container">
+        <h2>Total Energy Usage by Department</h2>
+        <div class="loading-spinner"></div>
+        <img class="chart" data-src="{{ url_for('plot_energy_usage') }}" alt="Energy Usage Chart">
+    </div>
+
+
+
+    <div class="chart-container">
+        <h2>Waste Generation Per Department</h2>
+        <div class="loading-spinner"></div>
+        <img class="chart" data-src="{{ url_for('plot_waste_generation') }}" alt="Waste Generation Chart">
+    </div>
+
+    <div class="chart-container">
+        <h2>Renewable vs Non-Renewable Energy Usage</h2>
+        <div class="loading-spinner"></div>
+        <img class="chart" data-src="{{ url_for('plot_energy_comparison') }}" alt="Energy Comparison Chart">
+    </div>
+
+    <div class="chart-container">
+        <h2>Water Usage Trends</h2>
+        <div class="loading-spinner"></div>
+        <img class="chart" data-src="{{ url_for('plot_water_usage') }}" alt="Water Usage Chart">
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2025 Sustainability Dashboard | Designed for a Greener Future 🌿
+    </div>
+
+    <!-- JavaScript for Loading Effect -->
+    <script>
+        $(document).ready(function() {
+            $(".chart").each(function() {
+                let img = $(this);
+                let src = img.attr("data-src");
+                img.hide();  // Hide image initially
+
+                // Load the image
+                $("<img>").attr("src", src).on("load", function() {
+                    img.attr("src", src).fadeIn();
+                    img.siblings(".loading-spinner").remove(); // Remove loading spinner
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
