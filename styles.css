@@ -1,0 +1,168 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #0056b3;
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard Title */
+h1 {
+    text-align: center;
+    color: #222;
+    font-size: 28px;
+    margin-top: 20px;
+}
+
+/* Statistics Section */
+.stats-container {
+    background: whitish;
+    padding: 20px;
+    max-width: 80%;
+    margin: auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.stats-container p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Graph Styling */
+.chart-container {
+
+    text-align: center;
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    max-width: 80%;
+    margin: auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.chart {
+    max-width: 90%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #ccc;
+    border-top: 4px solid #0056b3;
+    border-radius: 50%;
+    margin: auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #0056b3;
+    color: white;
+    margin-top: 20px;
+}
+
+/* ======= Login & Signup Styles ======= */
+
+/* Form Container */
+.form-container {
+    background: white;
+    padding: 30px;
+    width: 350px;
+    margin: 80px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Form Heading */
+.form-container h2 {
+    margin-bottom: 20px;
+    color: #0056b3;
+}
+
+/* Input Fields */
+.form-container input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Submit Button */
+.form-container button {
+    width: 95%;
+    padding: 12px;
+    background: #0056b3;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.form-container button:hover {
+    background: #003d80;
+}
+
+/* Links */
+.form-container p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.form-container a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .form-container {
+        width: 90%;
+    }
+}
